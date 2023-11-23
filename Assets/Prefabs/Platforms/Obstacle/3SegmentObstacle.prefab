@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3634472785627942654}
   - component: {fileID: 9038220737710299876}
   - component: {fileID: 3049670657037853820}
+  - component: {fileID: 7674579446250235209}
   m_Layer: 0
   m_Name: 3SegmentObstacle
   m_TagString: Untagged
@@ -667,3 +668,57 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &7674579446250235209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9220001986543710240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da0aefcf0ba4200833d883e975dbdf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveDuration:
+    Min: 2
+    Max: 4
+  _changeSpeedDuration:
+    Min: 1
+    Max: 2
+  _speed:
+    Min: 45
+    Max: 80
+  _changeSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42753562
+      value: 1.4561135
+      inSlope: 1.1077906
+      outSlope: 1.1077906
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
