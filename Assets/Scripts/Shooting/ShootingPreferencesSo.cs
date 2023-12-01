@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Shooting.Pool;
+using UnityEngine;
 
 namespace Shooting
 {
@@ -6,15 +7,18 @@ namespace Shooting
 	public class ShootingPreferencesSo : ScriptableObject
 	{
 		[Header("Projectile")] 
-		[SerializeField] private Projectile _projectilePrefab;
+		[SerializeField] private ProjectileFactory _projectileFactory;
 		[SerializeField] [Min(0.0f)] private float _projectileSpeed;
 
 		[SerializeField] [Min(0.0f)] private float _fireRate;
-		
-		public Weapon CreateWeapon(Transform shootPoint) =>
-			new Weapon(shootPoint, _projectilePrefab, _projectileSpeed);
-		
-		public FireRate CreateFireRate() =>
-			new FireRate(_fireRate);
+
+		public ProjectileFactory ProjectileFactory =>
+			_projectileFactory;
+
+		public float ProjectileSpeed =>
+			_projectileSpeed;
+
+		public float FireRate =>
+			_fireRate;
 	}
 }
