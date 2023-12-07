@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Paths.Builders;
+using UnityEngine;
 
 namespace Paths
 {
@@ -6,5 +7,6 @@ namespace Paths
 	public struct PathSegment
 	{
 		public Transform[] Waypoints;
+		public PathPlatformBuilder PlatformBuilder;
 	}
 }
