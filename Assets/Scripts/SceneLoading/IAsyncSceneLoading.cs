@@ -1,11 +1,10 @@
 ﻿using System.Threading.Tasks;
-using UnityEngine;
 
 namespace SceneLoading
 {
 	public interface IAsyncSceneLoading
 	{
-		Task<AsyncOperation> LoadAsync(Scene scene);
-		Task<AsyncOperation> UnloadAsync(Scene scene);
+		Task LoadAsync(Scene scene);
+		Task UnloadAsync(Scene scene);
 	}
 }

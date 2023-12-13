@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: Assets/ScriptableObjects/Shooting
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7aeee0f34a560e443ae23352d81938b4
+    m_Address: PlayerGeneratedPath
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3849a75dde3b7d54d84187b88bda6190, type: 2}
   m_SchemaSet:

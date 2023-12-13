@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Obstacles;
 using Paths.Builders;
 using UnityEngine;
@@ -13,12 +14,12 @@ namespace Paths
 		public IReadOnlyList<PathSegment> Segments => _segments;
 
 		public void Initialize(IReadOnlyList<PathPlatformStructure> platformStructures,
-			ObstacleCollisionFeedback feedback)
+			ObstacleCollisionFeedback feedback, CancellationTokenSource cancellationTokenSource)
 		{
 			for (int i = 0; i < platformStructures.Count; i++)
 			{
 				PathPlatformBuilder builder = _segments[i].PlatformBuilder;
-				builder.Initialize(platformStructures[i], feedback);
+				builder.Initialize(platformStructures[i], feedback, cancellationTokenSource);
 			}
 		}
 	}

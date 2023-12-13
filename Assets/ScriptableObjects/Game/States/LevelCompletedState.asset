@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eaff29b7d8490e9294ab50e3b9ef59, type: 3}
+  m_Name: LevelCompletedState
+  m_EditorClassIdentifier: 
+  _menu:
+    Name: Menu
+    LoadMode: 0
+  _levelChanging: {fileID: 11400000, guid: a6dc38573f00f3f4c9e2adb6a91f68c5, type: 2}

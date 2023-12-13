@@ -1,5 +1,5 @@
-﻿using Characters;
-using Paths;
+﻿using System;
+using Characters;
 using Shooting;
 using Shooting.Pool;
 using UnityEngine;
@@ -18,6 +18,8 @@ namespace Players
 		private FireRate _fireRate;
 		private Weapon _weapon;
 
+		public event Action Died;
+
 		private void Start()
 		{
 			Character character = _characterContainer.Create(transform);
@@ -31,6 +33,11 @@ namespace Players
 
 		public void Shoot() =>
 			_fireRate.Shoot(_weapon);
-		
+
+		private void OnTriggerEnter(Collider other)
+		{
+			if (other.TryGetComponent(out Projectile _))
+				Died?.Invoke();
+		}
 	}
 }
