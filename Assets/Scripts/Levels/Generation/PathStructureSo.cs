@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using Obstacles;
 using Paths;
 using Paths.Builders;
@@ -6,8 +7,8 @@ using UnityEngine;
 
 namespace Levels.Generation
 {
-	[CreateAssetMenu(fileName = "LevelStructure", menuName = "ScriptableObjects/Levels/LevelStructure")]
-	public class LevelStructureSo : ScriptableObject
+	[CreateAssetMenu(fileName = "PathStructure", menuName = "ScriptableObjects/Levels/PathStructure")]
+	public class PathStructureSo : ScriptableObject
 	{
 		[SerializeField] private Path _pathPrefab;
 		[SerializeField] private List<PathPlatformStructure> _platforms = new List<PathPlatformStructure>();
@@ -21,10 +22,10 @@ namespace Levels.Generation
 				_platforms.Add(default);
 		}
 
-		public Path CreatePath(Transform pathRoot, ObstacleCollisionFeedback feedback)
+		public Path CreatePath(Transform pathRoot, ObstacleCollisionFeedback feedback, CancellationTokenSource cancellationTokenSource)
 		{
 			Path path = Instantiate(_pathPrefab, pathRoot);
-			path.Initialize(_platforms, feedback);
+			path.Initialize(_platforms, feedback, cancellationTokenSource);
 			
 			return path;
 		}
