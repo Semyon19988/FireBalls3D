@@ -14,7 +14,7 @@ namespace Obstacles
 		public PlayerInputHandler PlayerInputHandler;
 		public ProjectilePool PlayerProjectilePool;
 	}
-	
+
 	public class ObstacleCollision : MonoBehaviour
 	{
 		[SerializeField] private ProjectileFactory _projectileFactory;
@@ -27,7 +27,7 @@ namespace Obstacles
 		{
 			_obstacleCollisionFeedback = feedback;
 		}
-
+		
 		private void OnCollisionEnter(Collision other)
 		{
 			if (other.gameObject.TryGetComponent(out Projectile projectile) == false)
@@ -35,20 +35,20 @@ namespace Obstacles
 			
 			if (_hasAlreadyCollided)
 				return;
-			
+
 			_hasAlreadyCollided = true;
-			
+
 			_obstacleCollisionFeedback.PlayerProjectilePool.Return(projectile);
 			_obstacleCollisionFeedback.PlayerInputHandler.Disable();
 			_obstacleCollisionFeedback.PlayerProjectilePool.Disable();
-
+			
 			Vector3 hitPoint = other.contacts[0].point;
 
 			Projectile playerHitProjectile = _projectileFactory.Create();
-			
+
 			new DirectionalBounce(playerHitProjectile.transform,
-				new CoroutineExecutor(playerHitProjectile),
-				_bouncePreferences.Value)
+					new CoroutineExecutor(playerHitProjectile),
+					_bouncePreferences.Value)
 				.BounceTo(_obstacleCollisionFeedback.Player.position, hitPoint);
 		}
 	}

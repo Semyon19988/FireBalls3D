@@ -23,7 +23,7 @@ namespace Obstacles.Disappearing
 		{
 			await _animation.ApplyTo(_obstaclesRoot);
 
-			foreach (var obstacle in _obstacles)
+			foreach (Obstacle obstacle in _obstacles)
 				UnityObject.Destroy(obstacle.gameObject);
 
 			await Task.CompletedTask;

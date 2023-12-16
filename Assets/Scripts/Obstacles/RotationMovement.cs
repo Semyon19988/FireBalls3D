@@ -6,14 +6,15 @@ namespace Obstacles
 	{
 		private readonly Transform _transform;
 		private readonly Vector3 _axis;
-
+		
 		public RotationMovement(Transform transform, Vector3 axis)
 		{
 			_transform = transform;
 			_axis = axis;
 		}
-		public float Speed { get; private set; }
 
+		public float Speed { get; private set; }
+		
 		public void Move(float speed)
 		{
 			Speed = speed;

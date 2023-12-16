@@ -78,6 +78,130 @@ MonoBehaviour:
     m_Address: Assets/Plugins/TextMeshPro/Shaders/TMP_SDF-Mobile.shader
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 45a96579cce75d84c8f5948ea710fcff
+    m_Address: Assets/ScriptableObjects/Game/GameStateMachine.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ce7b0a337845b5e4c852cd2fb4b75eda
+    m_Address: Assets/ScriptableObjects/Game/States/LevelLostState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3b5dd65873692643a4192f60b9029c5
+    m_Address: Assets/ScriptableObjects/Game/States/LevelCompletedState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 378a2a16ccbaaee4db4db3f37ac91e83
+    m_Address: Assets/ScriptableObjects/Game/States/LevelEntryStateSo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a6dc38573f00f3f4c9e2adb6a91f68c5
+    m_Address: Assets/ScriptableObjects/Levels/CurrentLevel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7529b90a7081d734083e31f15aec6df8
+    m_Address: Assets/ScriptableObjects/Levels/PathStructureContainer.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 75c1fb54e06debc408654f4baf1998ef
+    m_Address: Assets/ScriptableObjects/Levels/Storage/LevelStorage.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c9cbdbf2812aa84cb6da8149ce831fe
+    m_Address: Assets/ScriptableObjects/Levels/Storage/LevelNumber.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f25abce2e62bc8a4d8f4652d189253cf
+    m_Address: "Assets/ScriptableObjects/Levels/PathStructures/(\u21163)PathStructure.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0fe36043363401c46a76e86e7f8bb319
+    m_Address: "Assets/ScriptableObjects/Levels/PathStructures/(\u21161)PathStructure.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c793d8b6459a5c742abce16805efa743
+    m_Address: "Assets/ScriptableObjects/Levels/PathStructures/(\u21162)PathStructure.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9f1dc00199163d54e963e00f476bd2fa
+    m_Address: Assets/Prefabs/Platforms/Pathes/Path1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d873245de7efc245a5f13364aeb6425
+    m_Address: Assets/ScriptableObjects/Tower/TowerStructure20Segments.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 01f7c475e5e4b8e4da54ee562da84f89
+    m_Address: Assets/ScriptableObjects/Tower/TowerStructure50Segments.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55d975e63cdd9314fb67438ef8b5b9e0
+    m_Address: Assets/ScriptableObjects/Tower/TowerStructure25Segments.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 41ec9e6aa9fe6c84f9d6288fe9b895db
+    m_Address: Assets/Prefabs/Platforms/Obstacles/Obstacle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 473d250ec2a6a424fb33ef59dc936982
+    m_Address: Assets/ScriptableObjects/Tower/TowerStructure40Segments.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 01df9f9074095844598474af42f53d3b
+    m_Address: Assets/Prefabs/Tower/Segments/8SideCylinderSegment.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9e8a256b2e009743bcefbdabbb05382
+    m_Address: Assets/AssetStore/LowPolyEnvironmentPack/FBX/Materials/Purple.1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c856162727dc18842bc191504f727456
+    m_Address: Assets/AssetStore/CustomizableSkybox/Model/Materials/green tree.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 935ef7774c6481b4daeb535d70139920
+    m_Address: Assets/Materials/Tower/Segments/Turquoise.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 602945d79efd54d4b946221f18e5646c
+    m_Address: Assets/Materials/Tower/Segments/LightPurple.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0933253977cd0454b989b8bc25bbdc83
+    m_Address: Assets/AssetStore/LowPolyEnvironmentPack/FBX/Materials/Orange.3.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e773be4e8e6c49f41bb67bfe941451c0
+    m_Address: Assets/AssetStore/LowPolyEnvironmentPack/FBX/Materials/Purple.2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a277a2cc08a25549b4b7617892f02e5
+    m_Address: Assets/ScriptableObjects/Physics/DirectionalBouncePreferences.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe51471268beef8419fd85e4c29576e0
+    m_Address: Assets/ScriptableObjects/Tweening/FastRotationTween.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f927f716fb0670246a550529bf39a517
+    m_Address: Assets/ScriptableObjects/Tweening/ObstaclesDisappearAnimation.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 736df4557af0e8641af932391681f124
+    m_Address: Assets/Materials/Platforms/Obstacle/ObstacleBlue.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8c9060f2886806046ba948bdacfd9c3d
+    m_Address: Assets/Materials/Platforms/Obstacle/ObstacleCircleLightGray.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2aed5b5ab53d2e841bab06af22e51cbe
+    m_Address: Assets/Materials/Platforms/FloorWhite.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 95e6d83e473aabe4e8d1469f92d8c92c
+    m_Address: Assets/Materials/Platforms/PillarGray.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3849a75dde3b7d54d84187b88bda6190, type: 2}
   m_SchemaSet:

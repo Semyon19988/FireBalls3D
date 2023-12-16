@@ -7,9 +7,9 @@ namespace Towers
 	{
 		private readonly Queue<TowerSegment> _segments;
 		private readonly ReactiveProperty<int> _segmentCount;
-		
-		public Tower(IEnumerable<TowerSegment> segments) : this(new Queue<TowerSegment>(segments)){ }
 
+		public Tower(IEnumerable<TowerSegment> segments) : this(new Queue<TowerSegment>(segments)) { }
+		
 		public Tower(Queue<TowerSegment> segments)
 		{
 			_segments = segments;

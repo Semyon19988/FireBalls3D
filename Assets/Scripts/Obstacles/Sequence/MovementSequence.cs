@@ -14,19 +14,20 @@ namespace Obstacles.Sequence
 		private int _currentTermIndex;
 		private Coroutine _executableSequence;
 
-		public MovementSequence(IMovementSequenceTerm[] terms, CoroutineExecutor coroutineExecutor)
+		public MovementSequence(IReadOnlyList<IMovementSequenceTerm> terms, CoroutineExecutor coroutineExecutor)
 		{
-			if (terms is null || ((ICollection) terms).Count == 0)
+			if (terms is null || terms.Count == 0)
 				throw new ArgumentException(nameof(terms));
+
 			_terms = terms;
 			_coroutineExecutor = coroutineExecutor;
 			_currentTermIndex = 0;
 		}
 
-		public void StartProcessing() =>
+		public void StartProcessing() => 
 			_executableSequence = _coroutineExecutor.Start(ChangeBetweenStates());
 
-		public void Stop() =>
+		public void Stop() => 
 			_coroutineExecutor.Stop(_executableSequence);
 
 		private IEnumerator ChangeBetweenStates()
@@ -41,7 +42,7 @@ namespace Obstacles.Sequence
 			}
 		}
 
-		private int GetNextTermIndex(int currentIndex) =>
+		private int GetNextTermIndex(int currentIndex) => 
 			(currentIndex + 1) % _terms.Count;
 	}
 }

@@ -7,7 +7,7 @@ namespace Obstacles.Sequence
 	public class ChangeSpeedSequenceTerm : IMovementSequenceTerm
 	{
 		private const float PositiveSpeedChangePercent = 0.5f;
-
+		
 		private readonly IMovement _movement;
 		private readonly FloatRange _speed;
 		private readonly FloatRange _duration;
@@ -28,8 +28,8 @@ namespace Obstacles.Sequence
 
 			float enteredSpeed = _movement.Speed;
 			float newSpeed = ChooseSpeed(_speed);
-			
-			while (Time.time < enteredSpeed + duration)
+
+			while (Time.time < enteredTime + duration)
 			{
 				float elapsedTimePercent = (Time.time - enteredSpeed) / duration;
 
@@ -39,7 +39,7 @@ namespace Obstacles.Sequence
 				float speed = enteredSpeed + scaledDifference;
 				
 				_movement.Move(speed);
-
+				
 				yield return null;
 			}
 		}

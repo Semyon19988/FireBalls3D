@@ -8,8 +8,10 @@ namespace Obstacles.Generation
 	{
 		private readonly IReadOnlyList<Obstacle> _obstaclePrefabs;
 
-		public ObstaclesGeneration(IReadOnlyList<Obstacle> obstaclePrefabs) => 
+		public ObstaclesGeneration(IReadOnlyList<Obstacle> obstaclePrefabs)
+		{
 			_obstaclePrefabs = obstaclePrefabs;
+		}
 
 		public IEnumerable<Obstacle> Create(Transform root, ObstacleCollisionFeedback feedback)
 		{
@@ -26,7 +28,7 @@ namespace Obstacles.Generation
 			return createdObstacles;
 		}
 
-		private Vector3 GetRandomYRotation() =>
+		private Vector3 GetRandomYRotation() => 
 			Vector3.up * Random.Range(0.0f, 360.0f);
 	}
 }

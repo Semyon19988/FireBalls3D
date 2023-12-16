@@ -13,7 +13,7 @@ namespace Players
 		private readonly Path _path;
 		private readonly PlayerInputHandler _inputHandler;
 		private readonly IPathCompletion _pathCompletion;
-
+		
 		public PlayerPathFollowing(PathFollowing pathFollowing, Path path, PlayerInputHandler inputHandler, IPathCompletion pathCompletion)
 		{
 			_pathFollowing = pathFollowing;
@@ -25,24 +25,24 @@ namespace Players
 		public async void StartMovingAsync(CancellationToken cancellationToken)
 		{
 			IReadOnlyList<PathSegment> segments = _path.Segments;
-
+			
 			foreach (PathSegment pathSegment in segments)
 			{
 				_inputHandler.Disable();
 				await _pathFollowing.MoveToNextAsync();
 
-				(TowerDisassembling towerDisassembling, ObstaclesDisappearing obstaclesDisappearing)
+				(TowerDisassembling towerDisassembling, ObstaclesDisappearing obstaclesDisappearing) 
 					= await pathSegment.PlatformBuilder.BuildAsync();
-				
+
 				if (cancellationToken.IsCancellationRequested)
 					return;
 				
 				_inputHandler.Enable();
-
+				
 				await towerDisassembling;
 				await obstaclesDisappearing.ApplyAsync();
 			}
-
+			_inputHandler.Disable();
 			_pathCompletion.Complete();
 		}
 	}

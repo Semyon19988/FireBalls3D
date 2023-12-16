@@ -23,6 +23,7 @@ namespace Shooting
 			{
 				Vector3 newPosition = _rigidbody.position + direction * (speed * Time.deltaTime);
 				_rigidbody.MovePosition(newPosition);
+				
 				yield return null;
 			}
 		}

@@ -24,7 +24,7 @@ namespace Obstacles.Sequence
 			while (Time.time < enteredTime + duration)
 			{
 				_movement.Move(speed);
-
+				
 				yield return null;
 			}
 		}

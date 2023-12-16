@@ -1,5 +1,6 @@
 ﻿using System;
 using Characters;
+using Paths;
 using Shooting;
 using Shooting.Pool;
 using UnityEngine;
@@ -8,9 +9,9 @@ namespace Players
 {
 	public class Player : MonoBehaviour
 	{
-		[Header("Characters")] 
+		[Header("Characters")]
 		[SerializeField] private CharacterContainerSo _characterContainer;
-
+		
 		[Header("Shooting")]
 		[SerializeField] private ShootingPreferencesSo _shootingPreferences;
 		[SerializeField] private ProjectilePool _projectilePool;
@@ -19,7 +20,7 @@ namespace Players
 		private Weapon _weapon;
 
 		public event Action Died;
-
+		
 		private void Start()
 		{
 			Character character = _characterContainer.Create(transform);
@@ -31,7 +32,7 @@ namespace Players
 			_fireRate = new FireRate(_shootingPreferences.FireRate);
 		}
 
-		public void Shoot() =>
+		public void Shoot() => 
 			_fireRate.Shoot(_weapon);
 
 		private void OnTriggerEnter(Collider other)

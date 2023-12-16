@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -25,7 +24,7 @@ namespace Paths
 		{
 			if (_pathSegmentIndex >= _path.Segments.Count)
 				return;
-			
+
 			PathSegment segment = _path.Segments[_pathSegmentIndex];
 			Transform[] waypoints = segment.Waypoints;
 
@@ -35,7 +34,7 @@ namespace Paths
 		private async Task MoveBetweenAsync(Transform follower, IReadOnlyList<Transform> waypoints)
 		{
 			int index = 1;
-			Transform followerTransform = _follower.transform;
+
 			while (index < waypoints.Count)
 			{
 				Vector3 position = waypoints[index].position;
@@ -44,11 +43,13 @@ namespace Paths
 					.DOLookAt(position, _preferences.RotationDuration)
 					.AsyncWaitForCompletion();
 
+
 				Task move = follower
 					.DOMove(position, _preferences.DurationPerWaypoint)
 					.AsyncWaitForCompletion();
 
 				await Task.WhenAll(lookAt, move);
+
 				index++;
 			}
 

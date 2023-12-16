@@ -1,4 +1,5 @@
 ﻿using System;
+using Players;
 using UnityEngine;
 using UnityObject = UnityEngine.Object;
 
@@ -21,7 +22,6 @@ namespace Towers.Disassembling
 		{
 			if (_tower.SegmentCount.Value == 0)
 				return;
-			
 
 			TowerSegment segment = _tower.RemoveBottom();
 			Vector3 segmentScale = segment.transform.localScale;
@@ -29,12 +29,15 @@ namespace Towers.Disassembling
 			_towerRoot.position -= Vector3.up * segmentScale.y;
 			
 			UnityObject.Destroy(segment.gameObject);
-			
+
 			if (_tower.SegmentCount.Value == 0)
+			{
 				Disassembled?.Invoke();
+			}
+				
 		}
-		
-		public TowerDisassemblingAwaiter GetAwaiter() =>
+
+		public TowerDisassemblingAwaiter GetAwaiter() => 
 			new TowerDisassemblingAwaiter(this);
 	}
 }

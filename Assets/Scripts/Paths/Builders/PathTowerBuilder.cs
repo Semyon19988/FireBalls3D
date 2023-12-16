@@ -16,10 +16,10 @@ namespace Paths.Builders
 	public class PathTowerBuilder : MonoBehaviour
 	{
 		[SerializeField] private Transform _towerRoot;
-
-		[Header("Effects")] 
-		[SerializeField] private FastRotationTweenSo _spawnAnimation;
 		
+		[Header("Effects")]
+		[SerializeField] private FastRotationTweenSo _spawnAnimation;
+
 		[Header("Linked Components")]
 		[SerializeField] private RestoreProjectilePoolTrigger _projectileHitTrigger;
 		[SerializeField] private TowerSegmentsLeftText _segmentsLeftText;
@@ -27,15 +27,17 @@ namespace Paths.Builders
 
 		private Action _unsubscribe;
 		private TowerStructureSo _structure;
-
-		public void Initialize(TowerStructureSo structure) =>
+		
+		public void Initialize(TowerStructureSo structure)
+		{
 			_structure = structure;
-
+		}
+		
 		public async Task<TowerDisassembling> BuildAsync(ProjectilePool pool, CancellationToken cancellationToken)
 		{
 			_spawnAnimation.ApplyTo(_towerRoot);
 			_projectileHitTrigger.Initialize(pool);
-			
+
 			TowerGenerator generator = new TowerGenerator(_structure);
 			generator.SegmentCreated += _segmentsLeftText.UpdateTextValue;
 
@@ -44,17 +46,20 @@ namespace Paths.Builders
 
 			if (cancellationToken.IsCancellationRequested)
 				return disassembling;
-
+			
 			SubscribeComponents(disassembling, tower, generator);
 
 			return disassembling;
 		}
 
+		private void OnDisable() => 
+			_unsubscribe?.Invoke();
+
 		private void SubscribeComponents(TowerDisassembling disassembling, Tower tower, TowerGenerator generator)
 		{
 			_projectileHitTrigger.ProjectileReturned += disassembling.TryRemoveBottom;
 			IReadOnlyReactiveProperty<int> segmentCount = tower.SegmentCount;
-			
+
 			segmentCount.Subscribe(_segmentsLeftText.UpdateTextValue);
 			segmentCount.Subscribe(_audio.PlaySound);
 
@@ -67,8 +72,5 @@ namespace Paths.Builders
 				segmentCount.Unsubscribe(_audio.PlaySound);
 			};
 		}
-
-		private void OnDisable() =>
-			_unsubscribe?.Invoke();
 	}
 }
